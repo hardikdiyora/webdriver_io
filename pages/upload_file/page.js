@@ -10,9 +10,11 @@ class UploadFilePage extends BasePage {
     }
 
     uploadAnyFile(path) {
-        browser.pause(5000);
-        this.upload_file_input.waitForExist();
-        this.upload_file_input.chooseFile(path);
+        console.log("Upload Method....");
+        if (this.upload_file_input.waitForExist()) {
+            console.log("Set Path for upload file...")
+            this.upload_file_input.chooseFile(path);
+        }
         browser.pause(500000);
     }
 
